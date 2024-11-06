@@ -27,10 +27,6 @@ export default function Home() {
       })
   }
 
-  const fetchBetweenData = async (from: Date): Promise<void> => {
-
-  }
-
   // 初回マウント時にフェッチ実行
   useEffect(() => {
       fetchAllDatas();

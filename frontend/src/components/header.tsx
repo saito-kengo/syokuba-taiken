@@ -8,17 +8,17 @@ const Header = (): ReactElement => {
 
     // カレンダー表示クリック
     const onClickShowCalender = (): void => {
-        toggleState()
+        toggleState(false)
     }
 
     // グラフ表示クリック
     const onClickShowGraph = (): void => {
-        toggleState()
+        toggleState(true)
     }
 
     return (
         <div className="bg-white p-4 sticky top-0 border-b-2 flex">
-            <div className="text-3xl mr-8">体温管理アプリ</div>
+            <div className="text-3xl mr-8">体音管理アプリ</div>
             <button
                 onClick={() => {onClickShowCalender()}}
                 className="p-2 mr-4 w-32 bg-indigo-600 text-white cursor-pointer rounded flex items-center justify-center active:scale-95">

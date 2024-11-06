@@ -42,7 +42,8 @@ const UpdateDialog = (props: UpdateDialogProps): ReactElement | null => {
     const handleChange = (value: string): void => {
       // 入力された値を数値に変換し、1桁の小数で表示
       if (value !== "") {
-        setTemperature({ id: temperature.id, temperature: parseFloat(value).toFixed(1), date: temperature.date });
+        const floatValue = Math.max(parseFloat(value), 0.0);
+        setTemperature({ id: temperature.id, temperature: floatValue.toFixed(1), date: temperature.date });
       } else {
         setTemperature({ id: temperature.id, temperature: "", date: temperature.date });
       }
@@ -55,13 +56,13 @@ const UpdateDialog = (props: UpdateDialogProps): ReactElement | null => {
             <h1 className="text-xl font-bold mb-4">体温を変更</h1>
           </div>
             <div className='my-4'>
-            <label className="font-sans font-bold text-1xl text-black">
+            <label className="font-sans font-bold text-1xl text-black block mb-2">
               {`${format(new Date(temperature.date), 'yyyy/M/d', { locale: ja })}の体温`}
             <input
               type="number"
               step="0.1"
               id="temp"
-              className="w-[90%] h-[2rem] mx-auto text-black border border-slate-500"
+              className="w-[70%] text-black border border-slate-500 block"
               onChange={(event) => handleChange(event.target.value)}
               value={temperature.temperature}></input>
                 </label>

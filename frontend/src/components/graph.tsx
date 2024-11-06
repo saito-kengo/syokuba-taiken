@@ -25,7 +25,7 @@ const Graph = (props: GraphProps): ReactElement => {
         const filteredData = props.temperatureDatas
             .filter(data => {
                 const dataDate = new Date(data.date);
-                return dataDate >= startDateAdjusted && dataDate <= endDate;
+                return dataDate >= startDate && dataDate <= endDate;
             })
             .map(data => ({
                 date: format(new Date(data.date), 'yyyy-MM-dd', { locale: ja }),

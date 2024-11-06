@@ -3,7 +3,7 @@ import { createContext, useContext, useState, ReactNode, ReactElement } from 're
 
 type ContextType = {
   isViewGraph: boolean;
-  toggleState: () => void;
+  toggleState: (isGraphView: boolean) => void;
 };
 
 // グラフ表示状態を管理するコンテキスト
@@ -13,8 +13,8 @@ export const IsViewGraphProvider = ({ children }: { children: ReactNode }): Reac
   const [isViewGraph, setIsViewGraph] = useState(false);
 
   // グラフ表示・非表示を切り替え
-  const toggleState = () => {
-    setIsViewGraph(prev => !prev);
+  const toggleState = (isGraphView: boolean) => {
+    setIsViewGraph(isGraphView);
   };
 
   return (

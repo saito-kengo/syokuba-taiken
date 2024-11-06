@@ -35,7 +35,8 @@ const RegisterDialog = (props: RegisterDialogProps): ReactElement | null => {
     const handleChange = (value: string): void => {
       // 入力された値を数値に変換し、1桁の小数で表示
       if (value !== "") {
-        setTemperature(parseFloat(value).toFixed(1));
+        const floatValue = Math.max(parseFloat(value), 0.0);
+        setTemperature(floatValue.toFixed(1));
       } else {
         setTemperature("");
       }
@@ -48,12 +49,12 @@ const RegisterDialog = (props: RegisterDialogProps): ReactElement | null => {
            <h1 className="text-xl font-bold mb-4">体温を入力</h1>
           </div>
             <div className='my-4'>
-            <label className="font-sans font-bold text-1xl text-black">
+            <label className="font-sans font-bold text-1xl text-black block mb-2">
                 {`${format(new Date(props.date), 'yyyy/M/d', { locale: ja })}の体温`}
                 <input
                   type="number"
-                  step="0.1"
-                  className="w-[90%] h-[2rem] mx-auto text-black border border-slate-500"
+                  step="0.5"
+                  className="w-[70%] text-black border border-slate-500 block"
                   value={temperature}
                   onChange={(event) => handleChange(event.target.value)}></input>
                 </label>

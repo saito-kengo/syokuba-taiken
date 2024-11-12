@@ -10,7 +10,11 @@ import { GRAPH_INIT_DATE_INTERVAL } from "@/constants/appParameter";
 export type GraphProps = {
     temperatureDatas: TemperatureData[]
 };
-  
+
+/**
+ * グラフコンポーネント
+ * @param props 親から渡される各種データ（全体温データ）
+ */
 const Graph = (props: GraphProps): ReactElement => {
     const [startDate, setStartDate] = useState<Date>(new Date(new Date().setDate(new Date().getDate() - GRAPH_INIT_DATE_INTERVAL)));
     const [endDate, setEndDate] = useState<Date>(new Date(new Date().setDate(new Date().getDate() + GRAPH_INIT_DATE_INTERVAL)));

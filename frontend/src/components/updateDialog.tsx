@@ -11,6 +11,10 @@ export type UpdateDialogProps = {
   onUpdate: (temperature: TemperatureData) => void;
 };
 
+/**
+ * 体温編集ダイアログコンポーネント
+ * @param props 親から渡される各種データ（開閉フラグ、日付、キャンセルコールバック、削除コールバック、更新コールバック）
+ */
 const UpdateDialog = (props: UpdateDialogProps): ReactElement | null => {
     const [temperature, setTemperature] = useState<TemperatureData>(props.data);
 

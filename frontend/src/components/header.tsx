@@ -3,6 +3,9 @@ import { ReactElement } from "react";
 import { FaPen } from "react-icons/fa";
 import { MdShowChart } from "react-icons/md";
 
+/**
+ * ヘッダーコンポーネント
+ */
 const Header = (): ReactElement => {
     const { toggleState } = useIsViewGraphContext();
 

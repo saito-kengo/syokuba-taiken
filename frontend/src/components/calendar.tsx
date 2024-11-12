@@ -2,7 +2,6 @@
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin, { Draggable, DropArg } from '@fullcalendar/interaction'
-import timeGridPlugin from '@fullcalendar/timegrid'
 import { ReactElement, useEffect, useState } from 'react'
 import RegisterDialog from './registerDialog'
 import { TemperatureData } from '@/constants/type'
@@ -16,7 +15,11 @@ export type CalenderProps = {
     temperatureDatas: TemperatureData[],
     onFetch: () => void;
 };
-  
+
+/**
+ * カレンダーコンポーネント
+ * @param props 親から渡される各種データ（全体温データ、データフェッチコールバック）
+ */
 const Calender = (props: CalenderProps): ReactElement => {
     const router = useRouter();
     

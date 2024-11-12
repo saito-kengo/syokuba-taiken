@@ -10,6 +10,10 @@ export type RegisterDialogProps = {
   onRegister: (temperature: TemperatureData) => void;
 };
 
+/**
+ * 体温記録ダイアログコンポーネント
+ * @param props 親から渡される各種データ（開閉フラグ、日付、キャンセルコールバック、記録コールバック）
+ */
 const RegisterDialog = (props: RegisterDialogProps): ReactElement | null => {
     const [temperature, setTemperature] = useState<string>("");
 

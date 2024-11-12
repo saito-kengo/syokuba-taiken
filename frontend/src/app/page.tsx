@@ -3,6 +3,7 @@
 import Calender from "@/components/calendar";
 import Graph from "@/components/graph";
 import Header from "@/components/header";
+import { DATA_FETCH_FAIL_MESSAGE } from "@/constants/message";
 import { TemperatureData } from "@/constants/type";
 import axiosInstance from "@/hooks/custumAxios";
 import { useIsViewGraphContext } from "@/hooks/isViewGraphProvider";
@@ -23,7 +24,7 @@ export default function Home() {
             setTemperatures(res.data)
         })
         .catch(error => {
-            alert("データの取得に失敗しました")
+            alert(DATA_FETCH_FAIL_MESSAGE)
         })
     }
 

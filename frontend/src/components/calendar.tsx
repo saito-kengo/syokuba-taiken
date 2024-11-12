@@ -10,6 +10,7 @@ import { ja } from 'date-fns/locale'
 import UpdateDialog from './updateDialog'
 import axiosInstance from '@/hooks/custumAxios'
 import { useRouter } from 'next/navigation'
+import { DELETE_FAIL_MESSAGE, DELETE_SUCCESS_MESSAGE, REGISTER_FAIL_MESSAGE, REGISTER_SUCCESS_MESSAGE, UPDATE_FAIL_MESSAGE, UPDATE_SUCCESS_MESSAGE } from '@/constants/message'
 
 export type CalenderProps = {
     temperatureDatas: TemperatureData[],
@@ -77,14 +78,14 @@ const Calender = (props: CalenderProps): ReactElement => {
             temperature: data.temperature
           })
           .then(_ => {
-            alert("保存しました")
+            alert(REGISTER_SUCCESS_MESSAGE)
             setIsRegisterOpen(false)
             props.onFetch();
             router.refresh();
           })
           .catch(error => {
             console.log(error);
-            alert("登録に失敗しました");
+            alert(REGISTER_FAIL_MESSAGE);
           })  
     }
 
@@ -96,14 +97,14 @@ const Calender = (props: CalenderProps): ReactElement => {
         // 体温データ削除API呼び出し（成功時はダイアログを閉じる）
         await axiosInstance.delete(`/temperatures/${data.id}`)
         .then(_ => {
-          alert("削除しました")
+          alert(DELETE_SUCCESS_MESSAGE)
           setIsUpdateOpen(false)
           props.onFetch();
           router.refresh();
         })
         .catch(error => {
           console.log(error);
-          alert("削除に失敗しました");
+          alert(DELETE_FAIL_MESSAGE);
         })   
     }
 
@@ -119,14 +120,14 @@ const Calender = (props: CalenderProps): ReactElement => {
           temperature: data.temperature
         })
         .then(_ => {
-          alert("更新しました")
+          alert(UPDATE_SUCCESS_MESSAGE)
           setIsUpdateOpen(false)
           props.onFetch();
           router.refresh();
         })
         .catch(error => {
           console.log(error);
-          alert("更新に失敗しました");
+          alert(UPDATE_FAIL_MESSAGE);
         }) 
     }
 

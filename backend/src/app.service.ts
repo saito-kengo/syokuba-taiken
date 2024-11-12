@@ -23,7 +23,6 @@ export class AppService {
    */
   public async createTemperature(data: Temperature): Promise<void> {
     try {
-      console.log(data)
       await prisma.temperature.create({
         data: {
           date: data.date,

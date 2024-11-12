@@ -27,7 +27,6 @@ export const GET = async (_: Request, { params: { id } }: { params: { id: string
 export const PUT = async (req: Request, { params: { id } }: { params: { id: string } }): Promise<Response> => {
     try {
         const reqData = await req.json();
-        console.log(reqData)
         const res = await fetch(`${API_SERVER_PATH}/temperatures/${id}`, {
             method: 'PUT',
             body: JSON.stringify(reqData),

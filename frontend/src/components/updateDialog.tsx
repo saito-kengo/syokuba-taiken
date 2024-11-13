@@ -46,7 +46,7 @@ const UpdateDialog = (props: UpdateDialogProps): ReactElement | null => {
     const handleChange = (value: string): void => {
       // 入力された値を数値に変換し、1桁の小数で表示
       if (value !== "") {
-        const floatValue = Math.max(parseFloat(value), 0.0);
+        const floatValue = Math.max(parseFloat(value), 35.0);
         setTemperature({ id: temperature.id, temperature: floatValue.toFixed(1), date: temperature.date });
       } else {
         setTemperature({ id: temperature.id, temperature: "", date: temperature.date });

@@ -1,7 +1,7 @@
 "use client"
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin, { Draggable, DropArg } from '@fullcalendar/interaction'
+import interactionPlugin from '@fullcalendar/interaction'
 import { ReactElement, useEffect, useState } from 'react'
 import RegisterDialog from './registerDialog'
 import { TemperatureData } from '@/constants/type'

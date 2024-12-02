@@ -176,21 +176,27 @@ export default function Home() {
                             {stage?.getStageName()}
                         </div>
                         <div className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${getBackgroundImageUrl()})` }}>
-                        <div className="absolute top-[35%] left-[15%] flex flex-col items-center space-y-2">
-                            <div className=" text-2xl font-bold text-center">
-                                {player?.getInfo()}
+                            <div className="absolute top-[35%] left-[15%] flex flex-col items-center space-y-2">
+                                <div className=" text-2xl font-bold text-center">
+                                    {player?.getInfo()}
+                                </div>
+                                <Image src={getPlayerImageUrl()} alt="bg" width={300} height={300} className="w-[50%] h-auto"/>
                             </div>
-                            <Image src={getPlayerImageUrl()} alt="bg" width={300} height={300} className="w-[50%] h-auto"/>
-                        </div>
-                        <div className="absolute top-[35%] left-[60%] flex flex-col items-center space-y-2">
-                            <div className="text-2xl font-bold text-center">
-                                {enemy?.getInfo()}
+                            <div className="absolute top-[35%] left-[60%] flex flex-col items-center space-y-2">
+                                <div className="text-2xl font-bold text-center">
+                                    {enemy?.getInfo()}
+                                </div>
+                                <Image src={getEnemyImageUrl()} alt="bg" width={300} height={300} className="w-[50%] h-auto"/>
                             </div>
-                            <Image src={getEnemyImageUrl()} alt="bg" width={300} height={300} className="w-[50%] h-auto"/>
-                        </div>
-                        <div className="absolute top-[5%] left-[50%] transform -translate-x-1/2 text-3xl font-bold">
-                            {turnCount}ターン目
-                        </div>
+                            <div className="absolute top-[5%] left-[50%] transform -translate-x-1/2 text-3xl font-bold">
+                                {turnCount}ターン目
+                            </div>
+                            {player?.isDead() && (
+                                <Image src="./gameover.svg" alt="bg" width={300} height={300} className="absolute top-[20%] left-[50%] transform -translate-x-1/2 text-3xl"/>
+                            )}
+                            {enemy?.isDead() && (
+                                <Image src="./win.svg" alt="bg" width={300} height={300} className="absolute top-[20%] left-[50%] transform -translate-x-1/2 text-3xl"/>
+                            )}
                         </div>
                         <div className="w-full h-[10rem] mt-1 p-2 bg-white overflow-y-scroll border-2" ref={logContainerRef}>
                             {battleLog.map((log, index) => (

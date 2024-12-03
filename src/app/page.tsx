@@ -36,7 +36,7 @@ export default function Home() {
         switch(STAGE_NUMBER) {
             case 1:
                 initPlayer = new Character("あなた", 20, 3, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("スライム", 10, 2, [ACTION_TYPE.ATTACK], "enemy1.svg", false);
+                initEnemy = new Character("スライム", 12, 2, [ACTION_TYPE.ATTACK], "enemy1.svg", false);
                 initStage = new BattleStage("ステージ1：始まりの平原", "back01.svg");
                 break;
             case 2:
@@ -51,27 +51,27 @@ export default function Home() {
                 break;
             case 4:
                 initPlayer = new Character("あなた", 25, 4, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ニワトリス", 40, 6, [ACTION_TYPE.SKILL,ACTION_TYPE.WAIT,ACTION_TYPE.ATTACK,ACTION_TYPE.HEAL], "enemy4.svg", false);
+                initEnemy = new Character("ニワトリス", 40, 6, [ACTION_TYPE.SKILL,ACTION_TYPE.WAIT,ACTION_TYPE.ATTACK,ACTION_TYPE.WAIT], "enemy4.svg", false);
                 initStage = new BattleStage("ステージ2：魔獣の森", "back02.svg");
                 break;
             case 5:
                 initPlayer = new Character("あなた", 30, 5, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ミニデーモン", 35, 6, [ACTION_TYPE.ATTACK,ACTION_TYPE.HEAL,ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD], "enemy5.svg", false);
+                initEnemy = new Character("ミニデーモン", 35, 5, [ACTION_TYPE.ATTACK,ACTION_TYPE.HEAL,ACTION_TYPE.SKILL,ACTION_TYPE.WAIT], "enemy5.svg", false);
                 initStage = new BattleStage("ステージ3：試練の砂漠", "back03.svg");
                 break;
             case 6:
-                initPlayer = new Character("あなた", 35, 5, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ゴーレム", 50, 10, [ACTION_TYPE.WAIT,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.ATTACK], "enemy6.svg", false);
+                initPlayer = new Character("あなた", 30, 5, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("ゴーレム", 50, 10, [ACTION_TYPE.WAIT,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.ATTACK,ACTION_TYPE.WAIT], "enemy6.svg", false);
                 initStage = new BattleStage("ステージ3：試練の砂漠", "back03.svg");
                 break;
             case 7:
                 initPlayer = new Character("あなた", 40, 6, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ガーディアン", 40, 8, [ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.HEAL,ACTION_TYPE.WAIT], "enemy7.svg", false);
+                initEnemy = new Character("ガーディアン", 40, 6, [ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.HEAL,ACTION_TYPE.WAIT], "enemy7.svg", false);
                 initStage = new BattleStage("ステージ4：魔王の城", "back04.svg");
                 break;
             case 8:
                 initPlayer = new Character("あなた", 40, 6, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("魔王", 50, 10, [ACTION_TYPE.ATTACK,ACTION_TYPE.SKILL,ACTION_TYPE.WAIT,ACTION_TYPE.GUARD,ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD], "enemy8.svg", false);
+                initEnemy = new Character("魔王", 50, 8, [ACTION_TYPE.SKILL,ACTION_TYPE.SKILL,ACTION_TYPE.GUARD,ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.HEAL], "enemy8.svg", false);
                 initStage = new BattleStage("ステージ4：魔王の城", "back04.svg");
                 break;
         }

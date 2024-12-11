@@ -7,6 +7,8 @@ import { ACTION_TYPE } from "@/constants/type";
 import Image from "next/image";
 import { BattleStage } from "@/model/stage";
 import { BATTLE_PROGRESS_TIME, BATTLE_WAIT_TIME } from "@/constants/appParameter";
+import { PLAYER01 } from "../../player01";
+import { PLAYER02 } from "../../player02";
 
 export default function Home() {
 
@@ -34,44 +36,49 @@ export default function Home() {
         let initEnemy;
         let initStage;
         switch(STAGE_NUMBER) {
+            case 0:
+                initPlayer = new Character(PLAYER01.name, PLAYER01.hp, PLAYER01.mp, PLAYER01.str, PLAYER01.def, PLAYER01.actions, PLAYER01.image, true);
+                initEnemy = new Character(PLAYER02.name, PLAYER02.hp, PLAYER02.mp, PLAYER02.str, PLAYER02.def, PLAYER02.actions, PLAYER02.image, true);
+                initStage = new BattleStage("闘技場", "battle-back.svg");
+                break;
             case 1:
-                initPlayer = new Character("あなた", 20, 3, 1, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("スライム", 12, 2, 1, [ACTION_TYPE.ATTACK], "enemy1.svg", false);
+                initPlayer = new Character("あなた", 50, 40, 10, 4, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("スーパースライム", 30, 0, 10, 5, [ACTION_TYPE.ATTACK], "enemy1.svg", false);
                 initStage = new BattleStage("ステージ1：始まりの平原", "back01.svg");
                 break;
             case 2:
-                initPlayer = new Character("あなた", 20, 3, 1, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ゴブリン", 20, 4, 1, [ACTION_TYPE.ATTACK,ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD], "enemy2.svg", false);
+                initPlayer = new Character("あなた", 50, 40, 10, 4, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("スーパーゴブリン", 40, 30, 15, 6, [ACTION_TYPE.ATTACK,ACTION_TYPE.ATTACK,ACTION_TYPE.DOUBLE_ATTACK], "enemy2.svg", false);
                 initStage = new BattleStage("ステージ1：始まりの平原", "back01.svg");
                 break;
             case 3:
-                initPlayer = new Character("あなた", 25, 4, 2, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("バット", 25, 3, 1, [ACTION_TYPE.ATTACK,ACTION_TYPE.SKILL,ACTION_TYPE.ATTACK], "enemy3.svg", false);
+                initPlayer = new Character("あなた", 70, 50, 15, 8, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("ポイズンバット", 50, 50, 15, 5, [ACTION_TYPE.POISON,ACTION_TYPE.SKILL,ACTION_TYPE.ATTACK], "enemy3.svg", false);
                 initStage = new BattleStage("ステージ2：魔獣の森", "back02.svg");
                 break;
             case 4:
-                initPlayer = new Character("あなた", 25, 4, 2,  ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ニワトリス", 40, 6, 2, [ACTION_TYPE.SKILL,ACTION_TYPE.WAIT,ACTION_TYPE.ATTACK,ACTION_TYPE.WAIT], "enemy4.svg", false);
+                initPlayer = new Character("あなた", 70, 50, 15, 8,  ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("デカニワトリ", 80, 60, 20, 4, [ACTION_TYPE.SKILL,ACTION_TYPE.WAIT,ACTION_TYPE.ATTACK,ACTION_TYPE.ATTACK], "enemy4.svg", false);
                 initStage = new BattleStage("ステージ2：魔獣の森", "back02.svg");
                 break;
             case 5:
-                initPlayer = new Character("あなた", 30, 5, 2, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ミニデーモン", 35, 5, 2, [ACTION_TYPE.ATTACK,ACTION_TYPE.HEAL,ACTION_TYPE.SKILL,ACTION_TYPE.WAIT], "enemy5.svg", false);
+                initPlayer = new Character("あなた", 80, 60, 20, 10, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("デーモン", 90, 100, 20, 10, [ACTION_TYPE.ATTACK,ACTION_TYPE.HEAL,ACTION_TYPE.SKILL,ACTION_TYPE.POISON], "enemy5.svg", false);
                 initStage = new BattleStage("ステージ3：試練の砂漠", "back03.svg");
                 break;
             case 6:
-                initPlayer = new Character("あなた", 30, 5, 2, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ゴーレム", 50, 10, 4, [ACTION_TYPE.WAIT,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.ATTACK,ACTION_TYPE.WAIT], "enemy6.svg", false);
+                initPlayer = new Character("あなた", 30, 80, 5, 2, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("ゴーレム", 50, 45, 10, 4, [ACTION_TYPE.WAIT,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.ATTACK,ACTION_TYPE.WAIT], "enemy6.svg", false);
                 initStage = new BattleStage("ステージ3：試練の砂漠", "back03.svg");
                 break;
             case 7:
-                initPlayer = new Character("あなた", 40, 6, 3, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("ガーディアン", 40, 6, 3, [ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.HEAL,ACTION_TYPE.WAIT], "enemy7.svg", false);
+                initPlayer = new Character("あなた", 40, 6, 100, 3, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("ガーディアン", 40, 100, 6, 3, [ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.SKILL,ACTION_TYPE.HEAL,ACTION_TYPE.WAIT], "enemy7.svg", false);
                 initStage = new BattleStage("ステージ4：魔王の城", "back04.svg");
                 break;
             case 8:
-                initPlayer = new Character("あなた", 40, 6, 3, ACTION_LIST, "player.svg", true)
-                initEnemy = new Character("魔王", 50, 8, 4, [ACTION_TYPE.SKILL,ACTION_TYPE.SKILL,ACTION_TYPE.GUARD,ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.HEAL], "enemy8.svg", false);
+                initPlayer = new Character("あなた", 40, 100, 6, 3, ACTION_LIST, "player.svg", true)
+                initEnemy = new Character("魔王", 50, 120, 8, 4, [ACTION_TYPE.SKILL,ACTION_TYPE.SKILL,ACTION_TYPE.GUARD,ACTION_TYPE.ATTACK,ACTION_TYPE.GUARD,ACTION_TYPE.HEAL], "enemy8.svg", false);
                 initStage = new BattleStage("ステージ4：魔王の城", "back04.svg");
                 break;
         }
@@ -190,13 +197,13 @@ export default function Home() {
                         </div>
                         <div className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${getBackgroundImageUrl()})` }}>
                             <div className="absolute top-[35%] left-[15%] flex flex-col items-center space-y-2">
-                                <div className=" text-2xl font-bold text-center">
+                                <div className=" text-1xl font-bold text-center">
                                     {player?.getInfo()}
                                 </div>
                                 <Image src={getPlayerImageUrl()} alt="bg" width={300} height={300} className="w-[50%] h-auto"/>
                             </div>
                             <div className="absolute top-[35%] left-[60%] flex flex-col items-center space-y-2">
-                                <div className="text-2xl font-bold text-center">
+                                <div className="text-1xl font-bold text-center">
                                     {enemy?.getInfo()}
                                 </div>
                                 <Image src={getEnemyImageUrl()} alt="bg" width={300} height={300} className="w-[50%] h-auto"/>

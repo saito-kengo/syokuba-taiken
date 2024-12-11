@@ -5,7 +5,8 @@ export const ACTION_TYPE = {
     GUARD: 3,
     HEAL: 4,
     SKILL: 5,
-    POISON: 6
+    POISON: 6,
+    DOUBLE_ATTACK: 7
 } as const;
 
 export type ActionType = typeof ACTION_TYPE[keyof typeof ACTION_TYPE];

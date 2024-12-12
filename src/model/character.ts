@@ -19,11 +19,13 @@ export class Character {
         private imageName: string,
         private isPlayer: boolean
     ) {
-        if(hp + mp + speed + str + def > PARAM_MAX) {
+        if(hp + mp + speed + str + def < 401) {
             name = name + "オーバーフロー";
             hp = 1;
             str = 1;
             def = 1;
+            mp = 1;
+            speed = 1;
         }
     }
 

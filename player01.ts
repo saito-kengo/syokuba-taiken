@@ -1,14 +1,5 @@
 import { ACTION_TYPE, ActionType } from "@/constants/type";
 export const P1_ACTION_LIST: ActionType[] = [
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
-    ACTION_TYPE.HEAL,
     ACTION_TYPE.ATTACK,
     ACTION_TYPE.ATTACK,
     ACTION_TYPE.ATTACK,
@@ -38,11 +29,11 @@ export const P1_ACTION_LIST: ActionType[] = [
 
 export const PLAYER01 = {
     name: "tikinnnn",
-    hp: 9.9,
-    mp: 90,
+    hp: 200,
+    mp: 0,
     str: 200,
     def: 0,
-    speed: 100.1,
+    speed: 0,
     actions: P1_ACTION_LIST,
     image: "player.svg"
 }

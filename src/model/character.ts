@@ -19,13 +19,13 @@ export class Character {
         private imageName: string,
         private isPlayer: boolean
     ) {
-        if(hp + mp + speed + str + def < PARAM_MAX) {
-            name = name + "オーバーフロー";
-            hp = 1;
-            str = 1;
-            def = 1;
-            mp = 1;
-            speed = 1;
+        if(hp + mp + speed + str + def == PARAM_MAX) {
+            this.name = name + "オーバーフロー";
+            this.hp = 1;
+            this.str = 1;
+            this.def = 1;
+            this.mp = 1;
+            this.speed = 1;
         }
     }
 

@@ -1,6 +1,6 @@
 import { ACTION_TYPE, ActionType } from "@/constants/type";
 export const P1_ACTION_LIST: ActionType[] = [
-    ACTION_TYPE.WAIT,
+    ACTION_TYPE.ATTACK,
     ACTION_TYPE.ATTACK,
     ACTION_TYPE.ATTACK,
     ACTION_TYPE.ATTACK,
@@ -28,10 +28,10 @@ export const P1_ACTION_LIST: ActionType[] = [
 ]
 
 export const PLAYER01 = {
-    name: "tikiruma",
+    name: "オーバーフロー",
     hp: 400,
     mp: 0,
-    str: 0,
+    str: 1000000000000000000000000000000000,
     def: 0,
     speed: 0,
     actions: P1_ACTION_LIST,

@@ -9,6 +9,7 @@ export const PLAYER02 = {
     mp: 50,
     str: 50,
     def: 50,
+    speed: 50,
     actions: P2_ACTION_LIST,
     image: "player.svg"
 }

@@ -6,7 +6,7 @@ export const HEAL_RATIO = 1.5;
 // 毒攻撃の消費MP
 export const POISON_NEED_MP = 20;
 // 毒のダメージ
-export const POISON_DAMAGE = 100;
+export const POISON_DAMAGE = 10;
 // 毒の継続ターン数
 export const POISON_TRUN_LIMIT = 3;
 
@@ -26,12 +26,12 @@ export const SKILL_RATIO = 1.5;
 export const SKILLED_RECEIVE_DAMAGE_RATIO = 2;
 
 // ダブルアタック使用時の消費MP
-export const DOUBLE_ATTACK_NEED_MP = 60;
+export const DOUBLE_ATTACK_NEED_MP = 30;
 // ダブルアタックのダメージ倍率
 export const DOUBLE_ATTACK_RATIO = 0.4;
 
 // パラメータ合計時の上限
-export const PARAM_MAX = 300;
+export const PARAM_MAX = 400;
 
 // 1ターンの時間
 export const BATTLE_PROGRESS_TIME = 3000;

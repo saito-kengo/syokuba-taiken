@@ -14,11 +14,12 @@ export class Character {
         private mp: number,
         private str: number,
         private def: number,
+        private speed: number,
         private actionList: ActionType[],
         private imageName: string,
         private isPlayer: boolean
     ) {
-        if(hp + mp + str + def > PARAM_MAX) {
+        if(hp + mp + speed + str + def > PARAM_MAX) {
             name = name + "オーバーフロー";
             hp = 1;
             str = 1;
@@ -44,6 +45,10 @@ export class Character {
 
     public getStr(): number {
         return this.str;
+    }
+
+    public getSpeed(): number {
+        return this.speed;
     }
 
     public getActionList(): ActionType[] {

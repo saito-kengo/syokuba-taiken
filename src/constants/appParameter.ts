@@ -1,7 +1,7 @@
 // ヒール使用時の消費MP
-export const HEAL_NEED_MP = 10;
+export const HEAL_NEED_MP = 0;
 // ヒールの回復量倍率
-export const HEAL_RATIO = 1.5;
+export const HEAL_RATIO = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 
 // 毒攻撃の消費MP
 export const POISON_NEED_MP = 20;
@@ -21,11 +21,11 @@ export const CRITICAL_CORRECTION_VALUE = 1000;
 export const GUARD_RATIO = 0.5;
 
 // スキル使用時の消費MP
-export const SKILL_NEED_MP = 15;
+export const SKILL_NEED_MP = 0;
 // スキル使用時の与えるダメージ倍率
-export const SKILL_RATIO = 1.5;
+export const SKILL_RATIO = 1;
 // スキル使用後に受けるダメージ倍率
-export const SKILLED_RECEIVE_DAMAGE_RATIO = 2;
+export const SKILLED_RECEIVE_DAMAGE_RATIO =-10000000000000000000000000000000000000000000000000000;
 
 // ダブルアタック使用時の消費MP
 export const DOUBLE_ATTACK_NEED_MP = 30;
@@ -33,7 +33,7 @@ export const DOUBLE_ATTACK_NEED_MP = 30;
 export const DOUBLE_ATTACK_RATIO = 0.4;
 
 // パラメータ合計時の上限
-export const PARAM_MAX =10;
+export const PARAM_MAX = 400;
 
 // 1ターンの時間
 export const BATTLE_PROGRESS_TIME = 3000;

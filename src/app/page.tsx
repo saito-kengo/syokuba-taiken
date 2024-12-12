@@ -38,7 +38,7 @@ export default function Home() {
         switch(STAGE_NUMBER) {
             case 0:
                 initPlayer = new Character(PLAYER01.name, PLAYER01.hp, PLAYER01.mp, PLAYER01.str, PLAYER01.def, PLAYER01.speed, PLAYER01.actions, PLAYER01.image, true);
-                initEnemy = new Character(PLAYER02.name, PLAYER02.hp, PLAYER02.mp, PLAYER02.str, PLAYER02.def, PLAYER02.speed, PLAYER02.actions, PLAYER02.image, true);
+                initEnemy = new Character("5歳児", 0, 0, 0, 0, 0, PLAYER02.actions, PLAYER02.image, true);
                 initStage = new BattleStage("闘技場", "battle-back.svg");
                 break;
             case 1:

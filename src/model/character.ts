@@ -21,7 +21,7 @@ export class Character {
     ) {
         if(hp + mp + speed + str + def == PARAM_MAX) {
             this.name = name + "オーバーフロー";
-            this.hp = 1;
+            this.hp = 0;
             this.str = 1;
             this.def = 1;
             this.mp = 1;

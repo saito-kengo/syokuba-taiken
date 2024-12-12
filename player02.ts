@@ -1,14 +1,14 @@
 import { ACTION_TYPE, ActionType } from "@/constants/type";
 
-export const P2_ACTION_LIST: ActionType[] = [ACTION_TYPE.SKILL,ACTION_TYPE.HEAL,ACTION_TYPE.SKILL,ACTION_TYPE.GUARD]
+export const P2_ACTION_LIST: ActionType[] = [ACTION_TYPE.SKILL,ACTION_TYPE.SKILL,ACTION_TYPE.SKILL,ACTION_TYPE.GUARD]
 
 export const PLAYER02 = {
     name: "ちきばんてぇてぇ",
-    hp: 50,
-    mp: 40,
+    hp: 10,
+    mp: 30,
     str: 210    ,
     def: 0,
-    speed: 100,
+    speed: 150,
     actions: P2_ACTION_LIST,
     image: "フリーナ.jpg"
 }

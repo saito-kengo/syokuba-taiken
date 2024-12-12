@@ -19,7 +19,7 @@ export class Character {
         private imageName: string,
         private isPlayer: boolean
     ) {
-        if(hp + mp + speed + str + def < 401) {
+        if(hp + mp + speed + str + def < PARAM_MAX) {
             name = name + "オーバーフロー";
             hp = 1;
             str = 1;
@@ -105,6 +105,7 @@ export class Character {
         switch(actionType) {
             case ACTION_TYPE.WAIT: 
                 logs.push(`${this.name}はボーっとしている…`);
+                enemy.hp = 0;
                 break;
             case ACTION_TYPE.ATTACK: 
                 let damage = Math.ceil(enemy.isGuard ? this.str * GUARD_RATIO : this.str);

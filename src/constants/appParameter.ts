@@ -1,7 +1,7 @@
 // ヒール使用時の消費MP
 export const HEAL_NEED_MP = 0;
 // ヒールの回復量倍率
-export const HEAL_RATIO = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+export const HEAL_RATIO = 1.5;
 
 // 毒攻撃の消費MP
 export const POISON_NEED_MP = 20;
@@ -18,14 +18,14 @@ export const CRITICAL_RATIO = 2;
 export const CRITICAL_CORRECTION_VALUE = 1000;
 
 // 防御時のダメージ軽減率
-export const GUARD_RATIO = 0.5;
+export const GUARD_RATIO = Infinity;
 
 // スキル使用時の消費MP
 export const SKILL_NEED_MP = 0;
 // スキル使用時の与えるダメージ倍率
 export const SKILL_RATIO = 1;
 // スキル使用後に受けるダメージ倍率
-export const SKILLED_RECEIVE_DAMAGE_RATIO =-10000000000000000000000000000000000000000000000000000;
+export const SKILLED_RECEIVE_DAMAGE_RATIO =2;
 
 // ダブルアタック使用時の消費MP
 export const DOUBLE_ATTACK_NEED_MP = 30;

@@ -29,11 +29,11 @@ export const P1_ACTION_LIST: ActionType[] = [
 
 export const PLAYER01 = {
     name: "tikiruma",
-    hp: 1,
+    hp: 400,
     mp: 0,
     str: 0,
     def: 0,
-    speed: 399,
+    speed: 0,
     actions: P1_ACTION_LIST,
     image: "player.svg"
 }

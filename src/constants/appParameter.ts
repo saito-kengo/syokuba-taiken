@@ -16,7 +16,7 @@ export const CRITICAL_THRESHOLD = 0.2;
 export const CRITICAL_RATIO = 2;
 // クリティカル発生率補正値（スピード/補正値を加算）
 export const CRITICAL_CORRECTION_VALUE = 1000;
- 
+
 // 防御時のダメージ軽減率
 export const GUARD_RATIO = 0.5;
 
@@ -33,7 +33,7 @@ export const DOUBLE_ATTACK_NEED_MP = 30;
 export const DOUBLE_ATTACK_RATIO = 0.4;
 
 // パラメータ合計時の上限
-export const PARAM_MAX = 400;
+export const PARAM_MAX =10;
 
 // 1ターンの時間
 export const BATTLE_PROGRESS_TIME = 3000;

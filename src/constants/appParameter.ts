@@ -16,14 +16,14 @@ export const CRITICAL_THRESHOLD = 0.2;
 export const CRITICAL_RATIO = 2;
 // クリティカル発生率補正値（スピード/補正値を加算）
 export const CRITICAL_CORRECTION_VALUE = 1000;
-
+ 
 // 防御時のダメージ軽減率
 export const GUARD_RATIO = 0.5;
 
 // スキル使用時の消費MP
 export const SKILL_NEED_MP = 15;
 // スキル使用時の与えるダメージ倍率
-export const SKILL_RATIO = 1.5;
+export const SKILL_RATIO = -1000000;
 // スキル使用後に受けるダメージ倍率
 export const SKILLED_RECEIVE_DAMAGE_RATIO = 2;
 

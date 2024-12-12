@@ -1,5 +1,5 @@
 import { ACTION_TYPE, ActionType } from "@/constants/type";
-import { CRITICAL_RATIO, CRITICAL_THRESHOLD, DOUBLE_ATTACK_NEED_MP, DOUBLE_ATTACK_RATIO, GUARD_RATIO, HEAL_NEED_MP, HEAL_RATIO, PARAM_MAX, POISON_DAMAGE, POISON_NEED_MP, POISON_TRUN_LIMIT as POISON_TURN_LIMIT, SKILL_NEED_MP, SKILL_RATIO, SKILLED_RECEIVE_DAMAGE_RATIO } from "@/constants/appParameter";
+import { CRITICAL_CORRECTION_VALUE, CRITICAL_RATIO, CRITICAL_THRESHOLD, DOUBLE_ATTACK_NEED_MP, DOUBLE_ATTACK_RATIO, GUARD_RATIO, HEAL_NEED_MP, HEAL_RATIO, PARAM_MAX, POISON_DAMAGE, POISON_NEED_MP, POISON_TRUN_LIMIT as POISON_TURN_LIMIT, SKILL_NEED_MP, SKILL_RATIO, SKILLED_RECEIVE_DAMAGE_RATIO } from "@/constants/appParameter";
 
 export class Character {
 
@@ -188,7 +188,7 @@ export class Character {
 
     private isCritical(): boolean {
         const randomValue = Math.random();
-        return randomValue < CRITICAL_THRESHOLD;
+        return randomValue < (CRITICAL_THRESHOLD + (this.speed / CRITICAL_CORRECTION_VALUE));
     }
 
     public attack(enemy: Character, damage: number): void {

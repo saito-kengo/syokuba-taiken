@@ -14,6 +14,8 @@ export const POISON_TRUN_LIMIT = 3;
 export const CRITICAL_THRESHOLD = 0.2;
 // クリティカル発生時のダメージ倍率
 export const CRITICAL_RATIO = 2;
+// クリティカル発生率補正値（スピード/補正値を加算）
+export const CRITICAL_CORRECTION_VALUE = 1000;
 
 // 防御時のダメージ軽減率
 export const GUARD_RATIO = 0.5;
